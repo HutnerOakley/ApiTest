@@ -1,0 +1,21 @@
+project_name: 云端cms平台接口
+
+# 域名：
+host: https://idsaas.test.leiniao.com
+
+# 数据库相关配置
+db:
+  switch: False #数据库断言开关
+  host:
+  user: root
+  password: 123456789
+  port: 3306
+
+
+# 邮件配置
+email:
+  send_user: quan3.gan@tcl.com #发件人
+  email_host: mail.tcl.com
+  port: 587
+  stamp_key:
+  rece_users: quan3.gan@tcl.com,weiwu.li@tcl.com,ex_kegui.wang@tcl.com,ex_zhengxin.li@tcl.com  #收件人邮箱，多个邮箱用,间隔

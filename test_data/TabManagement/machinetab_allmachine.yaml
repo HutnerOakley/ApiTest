@@ -1,0 +1,499 @@
+-
+  api_name: 测试查询机型列表接口所有参数正常 # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/getAllMachine # 请求接口
+    data:
+      code: 9653
+      licence: 331
+      groups: UI5.0
+      machineLabel: 0
+      tabId: 1
+      deployType: 1
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+    name:
+      jsonpath: $.data[0].name
+      type: ==
+      value: TCL-CN-MT9653-C78G
+      AssertType:
+  sql:
+-
+  api_name: 测试deployType参数为0 # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/getAllMachine # 请求接口
+    data:
+      code: 9653
+      licence: 331
+      groups: UI5.0
+      machineLabel: 0
+      tabId: 1
+      deployType: 0
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+    name:
+      jsonpath: $.data[0].name
+      type: ==
+      value: TCL-CN-MT9653-C78G
+      AssertType:
+  sql:
+-
+  api_name: 测试code参数缺省 # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/getAllMachine # 请求接口
+    data:
+      licence: 331
+      groups: UI5.0
+      machineLabel: 0
+      tabId: 1
+      deployType: 0
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+    name:
+      jsonpath: $.data[*].name
+      type: contains
+      value: TCL-CN-MT9652-GA1
+      AssertType:
+  sql:
+-
+  api_name: 测试code参数为空 # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/getAllMachine # 请求接口
+    data:
+      code: ""
+      licence: 331
+      groups: UI5.0
+      machineLabel: 0
+      tabId: 1
+      deployType: 1
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+    name:
+      jsonpath: $.data[*].name
+      type: contains
+      value: TCL-CN-TC8000-S11H-YK
+      AssertType:
+  sql:
+-
+  api_name: 测试licence参数为空 # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/getAllMachine # 请求接口
+    data:
+      code: 9652
+      licence: ""
+      groups: UI5.0
+      machineLabel: 0
+      tabId: 1
+      deployType: 1
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+    name:
+      jsonpath: $.data[*].name
+      type: contains
+      value: TCL-CN-MT9652-GA1-YK
+      AssertType:
+  sql:
+-
+  api_name: 测试licence参数缺省 # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/getAllMachine # 请求接口
+    data:
+      code: 9652
+      groups: UI5.0
+      machineLabel: 0
+      tabId: 1
+      deployType: 1
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+    name:
+      jsonpath: $.data[*].name
+      type: contains
+      value: TCL-CN-MT9652-GA1-YK
+      AssertType:
+  sql:
+-
+  api_name: 测试groups参数为空 # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/getAllMachine # 请求接口
+    data:
+      code: 982
+      licence: 331
+      groups: ""
+      machineLabel: 0
+      tabId: 1
+      deployType: 1
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+    name:
+      jsonpath: $.data[*].name
+      type: contains
+      value: TCL-CN-T982-S11G-YK
+      AssertType:
+  sql:
+-
+  api_name: 测试groups参数缺省 # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/getAllMachine # 请求接口
+    data:
+      code: 982
+      licence: 331
+      machineLabel: 0
+      tabId: 1
+      deployType: 1
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+    name:
+      jsonpath: $.data[*].name
+      type: contains
+      value: TCL-CN-T982-S11G-YK
+      AssertType:
+  sql:
+-
+  api_name: 测试machineLabel参数为空 # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/getAllMachine # 请求接口
+    data:
+      code: 963
+      licence: 15
+      groups: UI5.0
+      machineLabel: ""
+      tabId: 1
+      deployType: 1
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+    name:
+      jsonpath: $.data[0].name
+      type: contains
+      value: TCL-CN-T963-G60E
+      AssertType:
+  sql:
+-
+  api_name: 测试machineLabel参数缺省 # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/getAllMachine # 请求接口
+    data:
+      code: 963
+      licence: 15
+      groups: UI5.0
+      tabId: 1
+      deployType: 1
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+    name:
+      jsonpath: $.data[0].name
+      type: contains
+      value: TCL-CN-T963-G60E
+      AssertType:
+  sql:
+-
+  api_name: 测试tabId参数为空 # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/getAllMachine # 请求接口
+    data:
+      code: 972
+      licence: 15
+      groups: ""
+      machineLabel: 0
+      tabId: ""
+      deployType: 1
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+    name:
+      jsonpath: $.data[*].name
+      type: contains
+      value: TCL-CN-T972-C76
+      AssertType:
+  sql:
+-
+  api_name: 测试tabId参数缺省 # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/getAllMachine # 请求接口
+    data:
+      code: 972
+      licence: 15
+      groups: ""
+      machineLabel: 0
+      deployType: 1
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+    name:
+      jsonpath: $.data[*].name
+      type: contains
+      value: TCL-CN-T972-C76
+      AssertType:
+  sql:

@@ -1,0 +1,1623 @@
+-
+  api_name: 测试机型TAB保存接口所有参数正常 # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 3840*2160
+      licenceId: 15
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-C8
+      deviceId: 111111
+      tabOrder: 推荐,VIP,电视剧,电影,动漫,综艺,应用
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]},{"id":6,"name":"动漫","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#565","necessary":0,"powerOnDefault":0,"orderNum":90,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":5,"childrenList":[]},{"id":7,"name":"综艺","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#530","necessary":0,"powerOnDefault":0,"orderNum":100,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":6,"childrenList":[]},{"id":8,"name":"应用","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#7","necessary":0,"powerOnDefault":0,"orderNum":110,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":7,"childrenList":[]}]
+      machineTabMachinesList: [{"id":593,"remark":null,"userId":308,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-C8","code":"TCL-CN-MT9652-C8","type":"TCL-CN-MT9652-C8","parentId":null,"remarks":"","memory":"3072","resolution":"3840*2160","chip":"","flash":"","controller":"","resolutionUI":"3840*2160","is3D":"0","licence":15,"apps":"","blockSpace":null,"groups":"","maxShowTabs":null,"recomData":"","priority":1,"machineLabel":"0","priorityDnum":"","licenceName":"云视听_腾讯VOD","updateTipState":"1","updateTipWhiteList":"","used":false,"thirdTag":null,"showChannel":"no","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-C8"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试id参数为空  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id:
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试id参数缺省  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试name参数为空  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id:
+      name:
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100001
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: 名称不能为空
+      AssertType:
+  sql:
+-
+  api_name:  测试name参数缺失  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100001
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: 名称不能为空
+      AssertType:
+  sql:
+-
+  api_name: 测试name参数类型为int  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 1234
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name: 测试description参数为空  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description:
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name: 测试description参数缺省  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试resolution参数为空  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution:
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试resolution参数缺省  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试licenceId参数为空  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId:
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试licenceId参数缺省  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试deployType参数为0  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 0
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试deployType参数为空  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType:
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: 请先选择部署方式
+      AssertType:
+  sql:
+-
+  api_name:  测试deployType参数缺省  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: 请先选择部署方式
+      AssertType:
+  sql:
+-
+  api_name:  测试deployType参数类型为string  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: "1234"
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试Type参数值为0  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 0
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试Type参数值为2  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 2
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试Type参数值错误  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: qwe
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试Type参数为空  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type:
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试Type参数缺省  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试clientType参数有多个值 # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试clientType参数值为空  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 0
+      clientType:
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100001
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: 机型不能为空
+      AssertType:
+  sql:
+-
+  api_name:  测试clientType参数缺省  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 0
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100001
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: 机型不能为空
+      AssertType:
+  sql:
+-
+  api_name:  测试clientType参数值错误  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: 123456
+      deviceId: 222222
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试deviceId参数有多个值时  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222,333333,444444
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试deviceId参数值错误  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: qwe%%_
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试deviceId参数为空  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId:
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试deviceId参数缺省  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试tabOrder参数值类型错误  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222,333333,444444
+      tabOrder: 123
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试tabOrder参数为空  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222,333333,444444
+      tabOrder:
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试tabOrder参数缺省  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222,333333,444444
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name:  测试machineTabTabsList参数值类型错误  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222,333333,444444
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: {"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"}
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100001
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: JSON parse error
+      AssertType:
+  sql:
+-
+  api_name:  测试machineTabTabsList参数为空  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222,333333,444444
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList:
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100014
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: 机型列表或机型Tab不能为空
+      AssertType:
+  sql:
+-
+  api_name:  测试machineTabTabsList参数缺省  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222,333333,444444
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabMachinesList: [{"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"},{"id":920,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-T982-S11G-YK","code":"TCL-CN-T982-S11G-YK","type":"TCL-CN-T982-S11G-YK","parentId":null,"remarks":null,"memory":"16384","resolution":"3840*2160","chip":null,"flash":"2","controller":null,"resolutionUI":"1920*1080","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":"UI5.0","maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"no","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"youku","machineCode":"TCL-CN-T982-S11G-YK"}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100014
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: 机型列表或机型Tab不能为空
+      AssertType:
+  sql:
+-
+  api_name:  测试machineTabMachinesList参数值错误  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222,333333,444444
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList: {"id":887,"remark":null,"userId":null,"updateDate":null,"dataType":"1","delFlag":null,"createDate":null,"name":"TCL-CN-MT9652-T7G","code":"TCL-CN-MT9652-T7G","type":"","parentId":null,"remarks":null,"memory":"4096","resolution":"1920*1080","chip":null,"flash":null,"controller":null,"resolutionUI":"1280*720","is3D":"0","licence":331,"apps":null,"blockSpace":null,"groups":null,"maxShowTabs":null,"recomData":null,"priority":0,"machineLabel":"0","priorityDnum":null,"licenceName":"云视听_酷喵VOD","updateTipState":"1","updateTipWhiteList":null,"used":false,"thirdTag":null,"showChannel":"yes","enterSignal":"yes","priorityBlackNums":null,"employeeId":"00148781","userName":"李维武","contentSource":"tencent","machineCode":"TCL-CN-MT9652-T7G"}
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100001
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: JSON parse error
+      AssertType:
+  sql:
+-
+  api_name:  测试machineTabMachinesList参数为空  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222,333333,444444
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+      machineTabMachinesList:
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100014
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: 机型列表或机型Tab不能为空
+      AssertType:
+  sql:
+-
+  api_name:  测试machineTabMachinesList参数缺省  # 用例名称
+  api_request: # 请求信息
+    method: POST # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/save # 请求接口
+    data:
+      id: 1
+      name: 接口测试使用
+      description: 接口测试使用
+      resolution: 1920*1080
+      licenceId: 331
+      deployType: 1
+      type: 1
+      clientType: TCL-CN-MT9652-T7G,TCL-CN-T982-S11G-YK,TCL-CN-T963-V6E-YK
+      deviceId: 222222,333333,444444
+      tabOrder: 推荐,VIP,电视剧,电影
+      machineTabTabsList: [{"id":2,"name":"推荐","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#62","necessary":0,"powerOnDefault":0,"orderNum":50,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":1,"childrenList":[]},{"id":3,"name":"VIP","display":1,"editable":1,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#363","necessary":0,"powerOnDefault":0,"orderNum":60,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":2,"childrenList":[]},{"id":4,"name":"电视剧","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#532","necessary":0,"powerOnDefault":0,"orderNum":70,"realTimeRequest":0,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":3,"childrenList":[]},{"id":5,"name":"电影","display":1,"editable":0,"movable":0,"userId":108,"dataType":1,"i18n":null,"inResourceId":"#533","necessary":0,"powerOnDefault":0,"orderNum":80,"realTimeRequest":1,"userLabel":"","userLabelName":"","labelType":null,"tabType":0,"subTabName":"","subI18n":null,"subI18nDisplay":null,"parentTabName":null,"pickColor":0,"enableFlowInfo":0,"flowInfoNum":5,"autoTab":0,"tabRefresh":0,"uuid":4,"childrenList":[]}]
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/json
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100014
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: 机型列表或机型Tab不能为空
+      AssertType:
+  sql:
+

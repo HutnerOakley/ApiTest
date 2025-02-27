@@ -1,0 +1,13 @@
+# Python 编译文件
+__pycache__/
+*.py[cod]
+
+# 虚拟环境
+venv/
+.env/
+
+# 日志文件
+*.log
+
+# PyCharm 项目配置文件
+.idea/

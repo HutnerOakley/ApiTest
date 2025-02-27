@@ -1,0 +1,127 @@
+-
+  api_name: 测试机型TAB删除接口参数正常 # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/delete # 请求接口
+    data:
+      ids: 1117
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name: 测试ids参数有多个值   # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/delete # 请求接口
+    data:
+      ids: 1117,1116,1118
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100000
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: ==
+      value: OK
+      AssertType:
+  sql:
+-
+  api_name: 测试ids参数为空   # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/delete # 请求接口
+    data:
+      ids:
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100002
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: EMPTY
+      AssertType:
+  sql:
+-
+  api_name: 测试ids参数缺省   # 用例名称
+  api_request: # 请求信息
+    method: GET # 请求类型
+    url: /tcl-template-cms/tpl/machinetab/delete # 请求接口
+    data:
+    headers:
+      X-Csrf-Token: $cache{token}
+      Cookie: rhp=https://idsaas.test.leiniao.com; JSESSIONID=$cache{api-token}; return-url=https://idsaas.test.leiniao.com/page/cms-launcher/#/moduleService/machineTabList
+      Content-Type: application/x-www-form-urlencoded
+      traditional: "true"
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36
+      Accept-Language: en-GB,en;q=0.9,fr-FR;q=0.8,fr;q=0.7,es-US;q=0.6,es;q=0.5,pt-PT;q=0.4,pt;q=0.3,it-IT;q=0.2,it;q=0.1,zh-CN;q=0.1,zh;q=0.1,ar-IL;q=0.1,ar;q=0.1,ru-RU;q=0.1,ru;q=0.1,zh-TW;q=0.1,en-US;q=0.1,es-ES;q=0.1,smn-FI;q=0.1,smn;q=0.1,hy-AM;q=0.1,hy;q=0.1
+      Accept-Encoding: gzip, deflate, br
+  validate: #断言
+    code:
+      jsonpath: $.code
+      type: ==
+      value: 100002
+      AssertType:
+    status_code:
+      jsonpath: $.status_code
+      type: ==
+      value: 200
+      AssertType:
+    msg:
+      jsonpath: $.msg
+      type: contains
+      value: EMPTY
+      AssertType:
+  sql:
